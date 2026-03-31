@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulamin — Cresta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --black: #1A1A18; --gold: #C8A96E; --cream: #F5F2ED; --gray: #888780; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--black); color: var(--cream); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 60px; }
+  nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,26,24,0.95), transparent); pointer-events: none; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: 0.25em; color: var(--gold); text-decoration: none; position: relative; z-index: 1; }
+  .nav-links { display: flex; gap: 48px; list-style: none; position: relative; z-index: 1; }
+  .nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  .nav-links a:hover { opacity: 1; }
+
+  .hero { padding: 140px 60px 60px; border-bottom: 0.5px solid rgba(200,169,110,0.1); }
+  .hero-label { font-size: 10px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); opacity: 0.5; margin-bottom: 16px; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 300; color: var(--cream); }
+
+  .doc-layout { display: grid; grid-template-columns: 220px 1fr; gap: 80px; padding: 80px 60px 120px; }
+  .doc-nav { position: sticky; top: 100px; height: fit-content; }
+  .doc-nav ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .doc-nav a { font-size: 11px; color: var(--gray); text-decoration: none; opacity: 0.5; padding: 8px 0; border-bottom: 0.5px solid rgba(200,169,110,0.06); display: block; transition: opacity 0.3s; }
+  .doc-nav a:hover { opacity: 1; color: var(--gold); }
+
+  .doc-content { max-width: 700px; }
+  .doc-section { margin-bottom: 56px; }
+  .doc-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 0.5px solid rgba(200,169,110,0.1); }
+  .doc-section p { font-size: 13px; line-height: 2; color: var(--gray); margin-bottom: 16px; }
+  .doc-section ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .doc-section ul li { font-size: 13px; line-height: 1.8; color: var(--gray); padding-left: 16px; position: relative; }
+  .doc-section ul li::before { content: '—'; position: absolute; left: 0; color: rgba(200,169,110,0.4); }
+  .doc-date { font-size: 11px; color: var(--gray); opacity: 0.4; margin-bottom: 48px; }
+
+  footer { padding: 60px 60px 32px; border-top: 0.5px solid rgba(200,169,110,0.1); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.25em; color: var(--gold); text-decoration: none; opacity: 0.6; }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a { font-size: 11px; color: var(--gray); text-decoration: none; opacity: 0.4; transition: opacity 0.3s; }
+  .footer-links a:hover { opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">CRESTA</a>
+  <ul class="nav-links">
+    <li><a href="index.html#produkty">Produkty</a></li>
+    <li><a href="o-marce.html">O marce</a></li>
+    <li><a href="kontakt.html">Kontakt i dane firmy</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Dokumenty prawne</p>
+  <h1 class="hero-title">Regulamin sklepu</h1>
+</div>
+
+<div class="doc-layout">
+  <nav class="doc-nav">
+    <ul>
+      <li><a href="#definicje">Definicje</a></li>
+      <li><a href="#zamowienia">Zamówienia</a></li>
+      <li><a href="#platnosci">Płatności</a></li>
+      <li><a href="#dostawa">Dostawa</a></li>
+      <li><a href="#zwroty">Zwroty</a></li>
+      <li><a href="#reklamacje">Reklamacje</a></li>
+      <li><a href="#dane">Dane osobowe</a></li>
+      <li><a href="polityka-prywatnosci.html">Polityka prywatności →</a></li>
+    </ul>
+  </nav>
+
+  <div class="doc-content">
+    <p class="doc-date">Obowiązuje od: 1 stycznia 2025</p>
+
+    <div class="doc-section" id="definicje">
+      <h2>§1 Definicje</h2>
+      <p>Sklep — sklep internetowy Cresta dostępny pod adresem cresta.coffee, prowadzony przez Cresta.</p>
+      <p>Klient — osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, która korzysta ze Sklepu.</p>
+      <p>Zamówienie — oświadczenie woli Klienta złożone za pośrednictwem Sklepu, zmierzające bezpośrednio do zawarcia Umowy Sprzedaży.</p>
+    </div>
+
+    <div class="doc-section" id="zamowienia">
+      <h2>§2 Składanie zamówień</h2>
+      <p>Zamówienia można składać przez 7 dni w tygodniu, 24 godziny na dobę za pośrednictwem strony internetowej Sklepu.</p>
+      <p>W celu złożenia zamówienia Klient zobowiązany jest wybrać produkty, podać dane do wysyłki oraz wybrać metodę płatności.</p>
+      <ul>
+        <li>Zamówienie zostaje złożone w momencie kliknięcia przycisku "Zamów i zapłać"</li>
+        <li>Po złożeniu zamówienia Klient otrzymuje potwierdzenie na podany adres email</li>
+        <li>Umowa sprzedaży zostaje zawarta z chwilą potwierdzenia zamówienia przez Sklep</li>
+      </ul>
+    </div>
+
+    <div class="doc-section" id="platnosci">
+      <h2>§3 Płatności</h2>
+      <p>Sklep akceptuje następujące metody płatności:</p>
+      <ul>
+        <li>Karty płatnicze (Visa, Mastercard)</li>
+        <li>BLIK</li>
+        <li>Przelewy internetowe (Przelewy24, PayU)</li>
+        <li>Apple Pay, Google Pay</li>
+      </ul>
+      <p>Płatność za zamówienie powinna zostać dokonana niezwłocznie po złożeniu zamówienia. W przypadku braku płatności w ciągu 24 godzin zamówienie zostaje anulowane.</p>
+    </div>
+
+    <div class="doc-section" id="dostawa">
+      <h2>§4 Dostawa</h2>
+      <p>Czas realizacji zamówienia wynosi 2–3 dni robocze od momentu zaksięgowania płatności.</p>
+      <p>Dostawa realizowana jest na terenie Polski za pośrednictwem:</p>
+      <ul>
+        <li>InPost Paczkomat — 12 zł (darmowa od 150 zł)</li>
+        <li>Kurier DPD — 15 zł (darmowy od 150 zł)</li>
+      </ul>
+    </div>
+
+    <div class="doc-section" id="zwroty">
+      <h2>§5 Zwroty</h2>
+      <p>Klient ma prawo do odstąpienia od umowy bez podania przyczyny w terminie 30 dni od dnia otrzymania towaru.</p>
+      <p>Aby dokonać zwrotu, Klient powinien skontaktować się ze Sklepem poprzez formularz kontaktowy lub email hello@cresta.coffee.</p>
+      <p>Zwrot środków nastąpi w ciągu 5 dni roboczych od otrzymania zwróconego towaru na ten sam rachunek bankowy, z którego dokonano płatności.</p>
+    </div>
+
+    <div class="doc-section" id="reklamacje">
+      <h2>§6 Reklamacje</h2>
+      <p>Sklep jest odpowiedzialny za wady fizyczne i prawne sprzedanych produktów na podstawie przepisów Kodeksu cywilnego.</p>
+      <p>Reklamację należy zgłosić emailem na adres hello@cresta.coffee lub przez formularz kontaktowy. Sklep ustosunkuje się do reklamacji w terminie 14 dni roboczych.</p>
+    </div>
+
+    <div class="doc-section" id="dane">
+      <h2>§7 Dane osobowe</h2>
+      <p>Administratorem danych osobowych Klientów jest Cresta. Dane osobowe są przetwarzane w celu realizacji zamówień, zgodnie z obowiązującymi przepisami prawa, w szczególności z RODO.</p>
+      <p>Szczegółowe informacje dotyczące przetwarzania danych osobowych znajdują się w <a href="polityka-prywatnosci.html" style="color: var(--gold);">Polityce Prywatności</a>.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">CRESTA</a>
+  <ul class="footer-links">
+    <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+    <li><a href="regulamin.html">Regulamin</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
