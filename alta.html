@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cresta Alta — 100% Arabica · Edycja limitowana</title>
+<title>Cresta Alta — 100% Arabica · Edycja premium</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -155,17 +155,12 @@
   <div class="product-info">
     <div class="product-badge-row">
       <span class="badge badge-gold">Premium</span>
-      <span class="badge badge-navy">Edycja limitowana</span>
+      <span class="badge badge-navy">Edycja premium</span>
       <span class="badge badge-outline">100% Arabica</span>
     </div>
     <p class="product-category">Kawa premium · Najwyzsza linia</p>
     <h1 class="product-name">Cresta<br>Alta</h1>
     <p class="product-subtitle">Najbardziej szlachetna pozycja w kolekcji.</p>
-    <div class="product-rating"><span class="rating-count">Brak publicznych opinii — sekcja wroci po pierwszych zamowieniach.</span></div>
-    <div class="limited-banner">
-      <div class="limited-dot"></div>
-      <p class="limited-text">Edycja limitowana — dostępność ograniczona. Produkowana w malych partiach z wyselekcjonowanych ziaren 100% Arabica.</p>
-    </div>
     <div class="taste-profile">
       <p class="taste-title">Profil smakowy</p>
       <div class="taste-bars">
@@ -176,13 +171,13 @@
       </div>
     </div>
     <div class="price-section">
-      <p class="price-main" id="price-display">119 zl</p>
+      <p class="price-main" id="price-display">49,99 zl</p>
       <p class="price-note">Cena za wybrana gramature · zakup jednorazowy jest glowna opcja</p>
     </div>
     <p class="options-label">Gramatura</p>
     <div class="options-grid">
-      <button class="option-btn active" data-price="119" onclick="selectOption(this)">500g</button>
-      <button class="option-btn" data-price="209" onclick="selectOption(this)">1kg</button>
+      <button class="option-btn active" data-price="49.99" onclick="selectOption(this, 'weight')">500g</button>
+      <button class="option-btn" data-price="90.99" onclick="selectOption(this, 'weight')">1kg</button>
     </div>
     
     <div class="purchase-row">
@@ -193,7 +188,7 @@
       </div>
       <button class="add-to-cart">Dodaj do koszyka</button>
     </div>
-    <button class="subscribe-btn">Subskrybuj Alta Collection — oszczędź 15% <span class="subscribe-save">−15%</span></button>
+    <button class="subscribe-btn">Subskrypcja opcjonalna <span class="subscribe-save">opcjonalnie</span></button>
     <div class="delivery-info">
       <div class="delivery-row">
         <div class="delivery-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 9h9V2H1v7zM10 4h2l1 2v3h-3V4z" stroke="rgba(200,169,110,0.5)" stroke-width="0.8" fill="none"/><circle cx="3.5" cy="11" r="1" stroke="rgba(200,169,110,0.5)" stroke-width="0.8" fill="none"/><circle cx="10.5" cy="11" r="1" stroke="rgba(200,169,110,0.5)" stroke-width="0.8" fill="none"/></svg></div>
@@ -233,23 +228,18 @@
       <p class="detail-text">Kolba, espresso i metody dla osob szukajacych bardziej premium profilu.</p>
     </div>
     <div class="detail-block">
-      <p class="detail-label">Edycja limitowana</p>
-      <h3 class="detail-title">Dlaczego Alta jest najwyzsza linia?</h3>
-      <p class="detail-text">Alta produkowana jest w malych partiach z ograniczonej dostepnosci ziaren. To celowy wybor — nie kompromis. Alta ma budowac premium charakter kolekcji. W tej wersji testowej produkt zostal ustawiony w prostszej, bardziej czytelnej ofercie 500g i 1kg.</p>
-    </div>
-  </div>
-</section>
+      <p class="detail-label">Dostepne warianty</p><h3 class="detail-title">Gramatura i format</h3><ul class="detail-list"><li>500g — premium na co dzien</li><li>1kg — dla tych, ktorzy wiedza, czego chca</li><li>Ziarnista · warianty 500g i 1kg</li><li>100% Arabica z Ameryki Poludniowej</li></ul></div></div></section>
 <section class="related">
   <p class="section-label reveal">Pozostałe kawy</p>
   <h2 class="section-title reveal">Odkryj resztę <em>kolekcji.</em></h2>
   <div class="related-grid reveal">
     <a href="origini.html" class="related-card">
       <div class="related-img"><span class="related-img-label">ORIGINI</span></div>
-      <div><p class="related-name">Cresta Origini</p><p class="related-desc">Blend łagodny · codzienny</p><p class="related-price">od 65 zl</p></div>
+      <div><p class="related-name">Cresta Origini</p><p class="related-desc">Blend łagodny · codzienny</p><p class="related-price">od 37,99 zl</p></div>
     </a>
     <a href="cima.html" class="related-card">
       <div class="related-img"><span class="related-img-label">CIMA</span></div>
-      <div><p class="related-name">Cresta Cima</p><p class="related-desc">Blend espresso · flagowy</p><p class="related-price">od 79 zl</p></div>
+      <div><p class="related-name">Cresta Cima</p><p class="related-desc">Blend espresso · flagowy</p><p class="related-price">od 49,99 zl</p></div>
     </a>
   </div>
 </section>
@@ -264,9 +254,13 @@
 </footer>
 <script>
   let qty = 1;
-  let currentPrice = 119;
-  function changeQty(d) { qty = Math.max(1, qty + d); document.getElementById('qty').textContent = qty; document.getElementById('price-display').textContent = (currentPrice * qty) + ' zl'; }
-  function selectType(btn) { return; }
+  function updatePrice() {
+    const activeWeight = document.querySelector('.options-grid .option-btn.active');
+    const unitPrice = activeWeight ? parseFloat(activeWeight.dataset.price || '49.99') : 49.99;
+    document.getElementById('price-display').textContent = (unitPrice * qty).toFixed(2).replace('.', ',') + ' zl';
+  }
+  function changeQty(d) { qty = Math.max(1, qty + d); document.getElementById('qty').textContent = qty; updatePrice(); }
+  function selectOption(btn, type) { btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updatePrice(); }
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>

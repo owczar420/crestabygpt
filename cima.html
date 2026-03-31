@@ -812,7 +812,6 @@
     <h1 class="product-name">Cresta<br>Cima</h1>
     <p class="product-subtitle">Flagowa, slodsza, najbardziej uniwersalna.</p>
 
-    <div class="product-rating"><span class="rating-count">Brak publicznych opinii — sekcja wroci po pierwszych zamowieniach.</span></div>
     <div class="taste-profile">
       <p class="taste-title">Profil smakowy</p>
       <div class="taste-bars">
@@ -840,21 +839,14 @@
     </div>
 
     <div class="price-section">
-      <p class="price-main" id="price-display">79 zl</p>
+      <p class="price-main" id="price-display">46,99 zl</p>
       <p class="price-note">Cena za wybrana gramature · zakup jednorazowy jest glowna opcja</p>
     </div>
 
     <p class="options-label">Gramatura</p>
     <div class="options-grid" id="weight-options">
-      <button class="option-btn active" data-price="49" onclick="selectOption(this, 'weight')">250g</button>
-      <button class="option-btn active" data-price="79" onclick="selectOption(this, 'weight')">500g</button>
-      <button class="option-btn" data-price="139" onclick="selectOption(this, 'weight')">1kg</button>
-    </div>
-
-    <p class="options-label">Rodzaj</p>
-    <div class="type-grid" id="type-options">
-      <button class="option-btn active" onclick="selectOption(this, 'type')">Ziarnista</button>
-      <button class="option-btn" onclick="selectOption(this, 'type')">Mielona</button>
+      <button class="option-btn active" data-price="46.99" onclick="selectOption(this, 'weight')">500g</button>
+      <button class="option-btn" data-price="63.99" onclick="selectOption(this, 'weight')">1kg</button>
     </div>
 
     <div class="purchase-row">
@@ -866,10 +858,7 @@
       <button class="add-to-cart">Dodaj do koszyka</button>
     </div>
 
-    <button class="subscribe-btn">
-      Subskrybuj i oszczędź 15%
-      <span class="subscribe-save">−15%</span>
-    </button>
+    <button class="subscribe-btn">Subskrypcja opcjonalna <span class="subscribe-save">opcjonalnie</span></button>
 
     <div class="delivery-info">
       <div class="delivery-row">
@@ -957,7 +946,7 @@
       <div>
         <p class="related-name">Cresta Origini</p>
         <p class="related-desc">Blend łagodny · codzienny</p>
-        <p class="related-price">od 65 zl</p>
+        <p class="related-price">od 37,99 zl</p>
       </div>
     </a>
 
@@ -965,8 +954,8 @@
       <div class="related-img"><span class="related-img-label">ALTA</span></div>
       <div>
         <p class="related-name">Cresta Alta</p>
-        <p class="related-desc">100% Arabica · limitowana</p>
-        <p class="related-price">od 119 zl</p>
+        <p class="related-desc">100% Arabica · premium</p>
+        <p class="related-price">od 49,99 zl</p>
       </div>
     </a>
   </div>
@@ -985,36 +974,15 @@
 
 <script>
   let qty = 1;
-  let currentPrice = 79;
-  let currentPrice = 49;
-
-  function changeQty(delta) {
-    qty = Math.max(1, qty + delta);
-    document.getElementById('qty').textContent = qty;
-    updatePrice();
-  }
-
-  function selectOption(btn, group) {
-    const parent = btn.parentElement;
-    parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (group === 'weight') {
-      currentPrice = parseInt(btn.dataset.price);
-      updatePrice();
-    }
-  }
-
   function updatePrice() {
-    document.getElementById('price-display').textContent = (currentPrice * qty) + ' zl';
+    const activeWeight = document.querySelector('.options-grid .option-btn.active');
+    const unitPrice = activeWeight ? parseFloat(activeWeight.dataset.price || '46.99') : 46.99;
+    document.getElementById('price-display').textContent = (unitPrice * qty).toFixed(2).replace('.', ',') + ' zl';
   }
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  function changeQty(d) { qty = Math.max(1, qty + d); document.getElementById('qty').textContent = qty; updatePrice(); }
+  function selectOption(btn, type) { btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updatePrice(); }
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>

@@ -162,7 +162,6 @@
     <p class="product-category">Kawa premium · Entry point</p>
     <h1 class="product-name">Cresta<br>Origini</h1>
     <p class="product-subtitle">Lagodna, codzienna, na spokojny start.</p>
-    <div class="product-rating"><span class="rating-count">Brak publicznych opinii — sekcja wroci po pierwszych zamowieniach.</span></div>
     <div class="taste-profile">
       <p class="taste-title">Profil smakowy</p>
       <div class="taste-bars">
@@ -173,13 +172,13 @@
       </div>
     </div>
     <div class="price-section">
-      <p class="price-main" id="price-display">65 zl</p>
+      <p class="price-main" id="price-display">37,99 zl</p>
       <p class="price-note">Cena za wybrana gramature · zakup jednorazowy jest glowna opcja</p>
     </div>
     <p class="options-label">Gramatura</p>
     <div class="options-grid">
-      <button class="option-btn active" data-price="65" onclick="selectOption(this)">500g</button>
-      <button class="option-btn" data-price="115" onclick="selectOption(this)">1kg</button>
+      <button class="option-btn active" data-price="37.99" onclick="selectOption(this, 'weight')">500g</button>
+      <button class="option-btn" data-price="78.99" onclick="selectOption(this, 'weight')">1kg</button>
     </div>
     
     <div class="purchase-row">
@@ -248,11 +247,11 @@
   <div class="related-grid reveal">
     <a href="cima.html" class="related-card">
       <div class="related-img"><span class="related-img-label">CIMA</span></div>
-      <div><p class="related-name">Cresta Cima</p><p class="related-desc">Blend espresso · flagowy</p><p class="related-price">od 79 zl</p></div>
+      <div><p class="related-name">Cresta Cima</p><p class="related-desc">Blend espresso · flagowy</p><p class="related-price">od 49,99 zl</p></div>
     </a>
     <a href="alta.html" class="related-card">
       <div class="related-img"><span class="related-img-label">ALTA</span></div>
-      <div><p class="related-name">Cresta Alta</p><p class="related-desc">100% Arabica · limitowana</p><p class="related-price">od 119 zl</p></div>
+      <div><p class="related-name">Cresta Alta</p><p class="related-desc">100% Arabica · premium</p><p class="related-price">od 49,99 zl</p></div>
     </a>
   </div>
 </section>
@@ -268,11 +267,14 @@
 </footer>
 
 <script>
-  let qty = 1, currentPrice = 39;
+  let qty = 1;
+  function updatePrice() {
+    const activeWeight = document.querySelector('.options-grid .option-btn.active');
+    const unitPrice = activeWeight ? parseFloat(activeWeight.dataset.price || '37.99') : 37.99;
+    document.getElementById('price-display').textContent = (unitPrice * qty).toFixed(2).replace('.', ',') + ' zl';
+  }
   function changeQty(d) { qty = Math.max(1, qty + d); document.getElementById('qty').textContent = qty; updatePrice(); }
-  function selectOption(btn) { btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); currentPrice = parseInt(btn.dataset.price); updatePrice(); }
-  function selectType(btn) { return; }
-  function updatePrice() { document.getElementById('price-display').textContent = (currentPrice * qty) + ' zl'; }
+  function selectOption(btn, type) { btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updatePrice(); }
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>

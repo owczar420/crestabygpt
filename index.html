@@ -258,31 +258,52 @@
   }
 
   /* STRIP */
-  .strip {
-    border-top: 0.5px solid rgba(200,169,110,0.2);
-    border-bottom: 0.5px solid rgba(200,169,110,0.2);
-    padding: 20px 60px;
-    display: flex;
-    gap: 60px;
-    overflow: hidden;
-  }
 
-  .strip-item {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    opacity: 0.6;
-    white-space: nowrap;
+  .strip {
     display: flex;
     align-items: center;
-    gap: 20px;
+    overflow: hidden;
+    border-top: 0.5px solid rgba(200,169,110,0.1);
+    border-bottom: 0.5px solid rgba(200,169,110,0.1);
+    background: rgba(245,242,237,0.02);
+    white-space: nowrap;
+  }
+
+  .strip-track {
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+    animation: stripLoop 28s linear infinite;
+  }
+
+  .strip:hover .strip-track { animation-play-state: paused; }
+
+  .strip-item {
+    flex: 0 0 auto;
+    padding: 18px 36px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    position: relative;
   }
 
   .strip-item::before {
-    content: '◆';
-    font-size: 6px;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 10px;
+    background: rgba(200,169,110,0.2);
+    transform: translateY(-50%);
+  }
+
+  @keyframes stripLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* PRODUCTS */
@@ -859,7 +880,7 @@
 
   <p class="hero-tagline">Kawa premium · 3 profile · 500g i 1kg</p>
   <h1 class="hero-title">Dotknij<br>szczytu <em>smaku.</em></h1>
-  <p class="hero-desc">Cresta to elegancka marka kawy premium zbudowana wokol trzech wyraznych profili — od lagodnego codziennego blendu, przez flagowy bestseller, po najbardziej szlachetna 100% Arabike. Kazda filizanka to ten moment, w ktorym codziennosc smakuje lepiej.</p>
+  <p class="hero-desc">Cresta. Od włoskiego słowa oznaczającego szczyt górskiego grzbietu — miejsce gdzie kończy się wysiłek, a zaczyna widok. Każda filiżanka to ten moment.</p>
   <div class="hero-actions">
     <a href="#produkty" class="btn-primary">Odkryj kolekcje</a>
     <a href="#wybor" class="btn-secondary">Pomoz mi wybrac</a>
@@ -873,14 +894,22 @@
 
 <!-- STRIP -->
 <div class="strip">
-  <div class="strip-item">Newsletter + dostep do nowosci</div>
-  <div class="strip-item">Wybierz kawe z pomoca AI</div>
-  <div class="strip-item">Kontakt i dane firmy w jednym miejscu</div>
-  <div class="strip-item">Zakup jednorazowy + subskrypcja opcjonalna</div>
-  <div class="strip-item">Box degustacyjny na start i na prezent</div>
-  <div class="strip-item">Newsletter + dostep do nowosci</div>
-  <div class="strip-item">Wybierz kawe z pomoca AI</div>
-  <div class="strip-item">Kontakt i dane firmy w jednym miejscu</div>
+  <div class="strip-track">
+    <div class="strip-item">Darmowa dostawa od 150 zl</div>
+    <div class="strip-item">Ameryka Poludniowa · Azja</div>
+    <div class="strip-item">100% Arabica w Alta</div>
+    <div class="strip-item">Subskrypcja opcjonalna</div>
+    <div class="strip-item">Zwrot 30 dni</div>
+    <div class="strip-item">Wybierz kawe z pomoca AI</div>
+    <div class="strip-item">Box degustacyjny</div>
+    <div class="strip-item">Darmowa dostawa od 150 zl</div>
+    <div class="strip-item">Ameryka Poludniowa · Azja</div>
+    <div class="strip-item">100% Arabica w Alta</div>
+    <div class="strip-item">Subskrypcja opcjonalna</div>
+    <div class="strip-item">Zwrot 30 dni</div>
+    <div class="strip-item">Wybierz kawe z pomoca AI</div>
+    <div class="strip-item">Box degustacyjny</div>
+  </div>
 </div>
 
 <!-- PRODUCTS -->
@@ -909,7 +938,7 @@
         <h3 class="product-name">Cresta Origini</h3>
         <p class="product-desc">Lagodny entry point do marki. Mieszanka Ameryki Pld. i Azji o niskiej kwasowosci i sredniej intensywnosci — spokojna, codzienna, latwa do pokochania.</p>
         <div class="product-footer">
-          <p class="product-price">od 65 zl <span>/ 500g</span></p>
+          <p class="product-price">od 37,99 zl <span>/ 500g</span></p>
           <button class="product-cta">Zobacz produkt</button>
         </div>
       </div>
@@ -930,7 +959,7 @@
         <h3 class="product-name">Cresta Cima</h3>
         <p class="product-desc">Najbardziej uniwersalna kawa w kolekcji. Niska kwasowosc, wysoka intensywnosc i slodycz — wybierz ja, gdy chcesz najbezpieczniejszy i najbardziej pewny zakup.</p>
         <div class="product-footer">
-          <p class="product-price">od 79 zl <span>/ 500g</span></p>
+          <p class="product-price">od 46,99 zl <span>/ 500g</span></p>
           <button class="product-cta">Zobacz produkt</button>
         </div>
       </div>
@@ -951,7 +980,7 @@
         <h3 class="product-name">Cresta Alta</h3>
         <p class="product-desc">Najbardziej szlachetna pozycja w kolekcji. 100% Arabica z Ameryki Poludniowej o sredniej kwasowosci, wysokiej slodyczy i intensywnym aromacie.</p>
         <div class="product-footer">
-          <p class="product-price">od 119 zl <span>/ 500g</span></p>
+          <p class="product-price">od 49,99 zl <span>/ 500g</span></p>
           <button class="product-cta">Zobacz produkt</button>
         </div>
       </div>
@@ -1113,10 +1142,7 @@
   <div class="footer-brand">
     <a href="index.html" class="nav-logo">CRESTA</a>
     <p class="footer-tagline">Dotknij szczytu smaku.<br>Każda filiżanka to ten moment.</p>
-    <div class="footer-social">
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-    </div>
+    
   </div>
 
   <div>
